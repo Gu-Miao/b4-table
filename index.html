@@ -5,58 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>b4-table</title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./b4-table.min.css">
+    <link href="https://cdn.bootcss.com/layer/2.3/skin/layer.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/b4-table.min.css">
 </head>
 
 <body>
     <div id="table"></div>
-
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="./b4-table.js"></script>
-<script>
-    var table = new Table();
-
-    var option = {
-        caption: 'test',
-        head: [
-            {
-                field: 'name',
-                title: '游戏名'
-            },
-            {
-                field: 'time',
-                title: '热门时间'
-            },
-            {
-                field: 'NO',
-                title: '序号'
-            }
-        ],
-        body: [
-            {
-                name: 'LOL',
-                time: '2015',
-                NO: 1
-            },
-            {
-                name: 'DNF',
-                time: '2015',
-                NO: 2
-            },
-            {
-                name: 'PUBG',
-                time: '2015',
-                NO: 3
-            }
-        ]
-    };
-
-    table.init('#table', option);
-</script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script src="./src/b4-table.js"></script>
+<script src="./data/initData.js"></script>
+<script src="./data/updateData.js"></script>
+<script src="./app.js"></script>
 
 
 </html>

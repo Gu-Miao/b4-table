@@ -1,0 +1,78 @@
+/*
+  * b4-table - An extended Bootstrap table based on boostrap4.
+  *
+  * @version v0.0.1
+  * @author Hikamai <1450206741@qq.com> (https://github.com/Gu-Miao)
+  * @license MIT
+  */
+
+@bColor : #ccc;
+@tborder: 1px solid #ccc;
+
+.b4-table {
+
+    * {
+        text-align  : center;
+        border-color: @bColor  !important;
+    }
+
+    table {
+        border-spacing  : 0;
+        border-width    : 1px;
+        border-top-width: 0;
+        margin-bottom   : 0;
+    }
+
+    caption {
+        border             : @tborder;
+        border-bottom-width: 0;
+        caption-side       : top;
+    }
+
+    thead th {
+        border-bottom-width: 1px;
+    }
+
+    .b4-page {
+
+        padding      : .25rem;
+        padding-right: 0;
+        width        : 100%;
+
+        .b4-pager {
+
+            margin      : .25rem;
+            margin-right: 0;
+
+            .btn-toolbar {
+                float       : right !important;
+                margin      : .25rem;
+                margin-right: 0;
+            }
+
+            .input-group {
+                line-height  : 38px;
+                border-top   : 1px solid #007bff;
+                border-bottom: 1px solid #007bff;
+
+                input {
+                    width : 50px;
+                    border: none;
+                    margin: 0;
+                }
+
+                span {
+                    margin: 0 1rem;
+
+                    &:first-child {
+                        margin-right: .25rem;
+                    }
+
+                    &:last-child {
+                        margin-left: .25rem;
+                    }
+                }
+            }
+        }
+    }
+}
