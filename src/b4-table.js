@@ -1,3 +1,11 @@
+/*
+  * b4-table - An extended Bootstrap table based on boostrap4.
+  *
+  * @version v0.0.1
+  * @author Hikamai <1450206741@qq.com> (https://github.com/Gu-Miao)
+  * @github (https://github.com/Gu-Miao/b4-table)
+  * @license MIT
+  */
 function Table() {
 
     // 当前显示的表体，即 body 部分的数据
