@@ -1,7 +1,7 @@
 /*
   * b4-table - An extended Bootstrap table based on boostrap4.
   *
-  * @version v0.0.1
+  * @version v0.0.2
   * @author Hikamai <1450206741@qq.com> (https://github.com/Gu-Miao)
   * @github (https://github.com/Gu-Miao/b4-table)
   * @license MIT
@@ -132,7 +132,7 @@ Table.prototype.pagerDOM = function (total) {
         $pager.find('button:eq(3)').prop('disabled', true);
     }
 
-    let keepPageNum = function() {
+    let keepPageNum = function () {
         $(this).val(that.pageNum);
     };
 
@@ -203,6 +203,12 @@ Table.prototype.renderBody = function () {
         for (let j = 0; j < this.head.length; ++j) {
             $tr.append($('<td>' + (data[i][this.head[j].field]) + '</td>'));
         }
+        $tr.append($(`
+            <td class="">
+                <button type="button" class="btn btn-sm btn-primary">修改</button>
+                <button type="button" class="btn btn-sm btn-danger">删除</button>
+            </td>`
+        ));
         $tbody.append($tr);
     }
 
@@ -217,6 +223,8 @@ Table.prototype.renderHead = function () {
     for (let i = 0; i < this.head.length; ++i) {
         $thead.find('tr').append($('<th>' + (this.head[i].title) + '</th>'));
     }
+
+    $thead.find('tr').append($('<th>操作</th>'));
 
     return $thead;
 }
