@@ -50,6 +50,8 @@ Table.prototype.update = function (bodyData) { // 只包括 body 部分
 // 绘制表格
 Table.prototype.render = function () {
 
+    let $opreator = $('<div class="opreator"></div>');
+
     layer.msg('加载中...', {
         icon: 16,
         shade: 0.01,
@@ -73,6 +75,7 @@ Table.prototype.render = function () {
     $table.append($thead).append($tbody);
 
     // 表格容器
+    $tableContainer.append($opreator);
     $tableContainer.append($table);
     $(this.selectorStr).empty().addClass('b4-table m-3').append($tableContainer).append($page);
 
