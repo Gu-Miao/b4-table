@@ -1,0 +1,20 @@
+{
+    "name": "b4-table",
+    "version": "1.0.0",
+    "description": "An extended Bootstrap table based on boostrap4 and layer.",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Gu-Miao/b4-table.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Gu-Miao/b4-table/issues"
+    },
+    "homepage": "https://github.com/Gu-Miao/b4-table#readme"
+}
