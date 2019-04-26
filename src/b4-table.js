@@ -25,6 +25,12 @@ function Table() {
 
     // 是否需要分页
     this.isPageNecessary = false;
+
+    // 修改按钮点击函数
+    this.changeClick = null;
+
+    // 删除按钮点击函数
+    this.deleteClick = null;
 }
 
 // 初始化表格
@@ -212,6 +218,8 @@ Table.prototype.renderBody = function () {
                 <button type="button" class="btn btn-sm btn-danger">删除</button>
             </td>`
         ));
+        $tr.find('button:eq(0)').click(this.changeClick);
+        $tr.find('button:eq(1)').click(this.deleteClick);
         $tbody.append($tr);
     }
 
@@ -260,6 +268,9 @@ Table.prototype.initData = function (selectorStr, data) {
     } else {
         this.dataRendering = [];
     }
+    
+    this.changeClick = data.changeClick;
+    this.deleteClick = data.deleteClick;
 }
 
 // 深拷贝存储

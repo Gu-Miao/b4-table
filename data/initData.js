@@ -194,5 +194,16 @@ var option = {
             time: '2015',
             NO: 12
         }
-    ]
+    ],
+    changeClick: change,
+    deleteClick: del
 };
+
+
+function change() {
+    console.log('change');
+}
+
+function del() {
+    console.log('del');
+}
