@@ -195,10 +195,19 @@ var option = {
             NO: 12
         }
     ],
+    newClick: newl,
+    previewClick: preview,
     changeClick: change,
     deleteClick: del
 };
 
+function newl() {
+    console.log('new');
+}
+
+function preview() {
+    console.log('preview');
+}
 
 function change() {
     console.log('change');

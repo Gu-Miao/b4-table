@@ -26,6 +26,12 @@ function Table() {
     // 是否需要分页
     this.isPageNecessary = false;
 
+    // 新增按钮点击函数
+    this.newClick = null;
+
+    // 预览按钮点击函数
+    this.previewClick = null;
+
     // 修改按钮点击函数
     this.changeClick = null;
 
@@ -56,7 +62,13 @@ Table.prototype.update = function (bodyData) { // 只包括 body 部分
 // 绘制表格
 Table.prototype.render = function () {
 
-    let $opreator = $('<div class="opreator"></div>');
+    let $opreator = $(`
+        <div class="opreator">
+            <button class="btn btn-primary mr-3">新增</button>
+        </div>
+    `);
+
+    $opreator.find('button').click(this.newClick)
 
     layer.msg('加载中...', {
         icon: 16,
@@ -214,12 +226,14 @@ Table.prototype.renderBody = function () {
         }
         $tr.append($(`
             <td class="">
-                <button type="button" class="btn btn-sm btn-primary">修改</button>
-                <button type="button" class="btn btn-sm btn-danger">删除</button>
+                <i class="icon iconfont icon-preview"></i>
+                <i class="icon iconfont icon-change"></i>
+                <i class="icon iconfont icon-delete"></i>
             </td>`
         ));
-        $tr.find('button:eq(0)').click(this.changeClick);
-        $tr.find('button:eq(1)').click(this.deleteClick);
+        $tr.find('i:eq(0)').click(this.previewClick);
+        $tr.find('i:eq(1)').click(this.changeClick);
+        $tr.find('i:eq(2)').click(this.deleteClick);
         $tbody.append($tr);
     }
 
@@ -268,7 +282,9 @@ Table.prototype.initData = function (selectorStr, data) {
     } else {
         this.dataRendering = [];
     }
-    
+
+    this.newClick = data.newClick;
+    this.previewClick = data.previewClick;
     this.changeClick = data.changeClick;
     this.deleteClick = data.deleteClick;
 }
